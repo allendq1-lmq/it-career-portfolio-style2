@@ -4,19 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nhóm 9h53 | IT Career Portfolio Showcase (SS004)</title>
-  <!-- Google Fonts & FontAwesome Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Sans-Serif (Inter) & FontAwesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
     :root {
-      --bg-color: #111116;
-      --card-bg: #1d1d26;
-      --primary: #e31b6d;
-      --accent: #00f2fe;
-      --text-main: #ffffff;
-      --text-muted: #a0a0b8;
-      --border-color: #2e2e3e;
+      --bg-color: #0b0f19;
+      --card-bg: #151c2c;
+      --primary: #3b82f6;
+      --accent: #06b6d4;
+      --highlight: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: #1e293b;
     }
 
     * {
@@ -27,7 +28,7 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-main);
       line-height: 1.6;
@@ -50,8 +51,8 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(17, 17, 22, 0.85);
-      backdrop-filter: blur(10px);
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-color);
       z-index: 1000;
       display: flex;
@@ -62,8 +63,11 @@
 
     .nav-logo {
       font-size: 1.5rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .nav-links {
@@ -76,6 +80,7 @@
       color: var(--text-main);
       text-decoration: none;
       font-weight: 500;
+      font-size: 0.95rem;
       transition: color 0.3s;
     }
 
@@ -83,7 +88,7 @@
       color: var(--primary);
     }
 
-    /* Sections Shared Styling */
+    /* Section Shared Styling */
     section {
       position: relative;
       z-index: 1;
@@ -95,10 +100,9 @@
     .section-title {
       font-size: 2.2rem;
       text-align: center;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
     }
 
     .section-title span {
@@ -109,53 +113,91 @@
       text-align: center;
       color: var(--text-muted);
       margin-bottom: 3rem;
-      font-size: 1.05rem;
+      font-size: 1rem;
+    }
+
+    .sample-badge-note {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--highlight);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
     }
 
     /* Hero Section */
     .hero {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      padding-top: 0;
+      justify-content: space-between;
+      gap: 2rem;
+      padding-top: 4rem;
     }
 
-    .hero h1 {
-      font-size: 3.5rem;
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
       margin-bottom: 1rem;
     }
 
-    .hero h1 span {
+    .hero-text h1 span {
       color: var(--primary);
     }
 
-    .hero p {
-      font-size: 1.2rem;
+    .hero-text p {
+      font-size: 1.1rem;
       color: var(--text-muted);
-      max-width: 700px;
       margin-bottom: 2rem;
+    }
+
+    .hero-avatar-box {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .ronaldo-img {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--primary);
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+      transition: transform 0.4s ease;
+    }
+
+    .ronaldo-img:hover {
+      transform: scale(1.05) rotate(2deg);
     }
 
     .btn-cta {
       display: inline-block;
       padding: 0.8rem 2rem;
-      border: 2px solid var(--primary);
+      background: var(--primary);
       color: #fff;
       text-decoration: none;
       font-weight: 600;
-      border-radius: 4px;
+      border-radius: 6px;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
     }
 
     .btn-cta:hover {
-      background-color: var(--primary);
-      box-shadow: 0 0 15px rgba(227, 27, 109, 0.5);
+      background: #2563eb;
+      transform: translateY(-2px);
     }
 
-    /* About & Purpose Card */
+    /* About Section */
     .about-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -164,67 +206,95 @@
       margin-bottom: 2rem;
     }
 
-    /* Styles Showcase Grid */
+    /* 5 Styles Showcase Grid */
     .styles-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
     }
 
     .style-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
-      padding: 1.8rem;
-      border-radius: 8px;
+      padding: 2rem;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       transition: transform 0.3s, border-color 0.3s;
     }
 
     .style-card.active {
       border-color: var(--primary);
-      box-shadow: 0 0 15px rgba(227, 27, 109, 0.2);
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
     }
 
     .style-card:hover {
       transform: translateY(-5px);
     }
 
-    .style-badge {
+    .style-num {
       display: inline-block;
-      padding: 0.2rem 0.6rem;
-      background: rgba(227, 27, 109, 0.2);
+      align-self: flex-start;
+      padding: 0.25rem 0.75rem;
+      background: rgba(59, 130, 246, 0.15);
       color: var(--primary);
       font-size: 0.8rem;
-      border-radius: 4px;
+      font-weight: 700;
+      border-radius: 20px;
       margin-bottom: 1rem;
     }
 
-    /* Playful Skills Grid */
+    .style-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .style-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Skills Matrix (Sample) */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
     }
 
     .skill-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
-      border-radius: 8px;
+      border-radius: 10px;
       padding: 1.5rem;
-      text-align: center;
     }
 
-    .skill-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .skill-header h4 {
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-level {
+      font-size: 0.85rem;
+      font-weight: 600;
       color: var(--accent);
     }
 
     .skill-bar-bg {
-      background: #111116;
+      background: #0f172a;
       height: 8px;
       border-radius: 4px;
       overflow: hidden;
-      margin-top: 1rem;
     }
 
     .skill-bar-fill {
@@ -233,7 +303,96 @@
       border-radius: 4px;
     }
 
-    /* Contact & GitHub Footer */
+    /* Projects Grid (Sample) */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-info {
+      padding: 1.5rem;
+    }
+
+    .project-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-info p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      background: #0f172a;
+      color: var(--accent);
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* Ronaldo Decorative Banner */
+    .ronaldo-banner {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .ronaldo-banner img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+    }
+
+    .ronaldo-banner blockquote {
+      font-style: italic;
+      color: var(--text-main);
+      font-size: 1.05rem;
+    }
+
+    .ronaldo-banner cite {
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--highlight);
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    /* Contact Box */
     .contact-box {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -249,6 +408,7 @@
       color: var(--accent);
       font-size: 1.2rem;
       text-decoration: none;
+      font-weight: 600;
       margin-top: 1rem;
     }
 
@@ -263,12 +423,15 @@
       border-top: 1px solid var(--border-color);
       position: relative;
       z-index: 1;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
       nav { padding: 1rem; }
-      .hero h1 { font-size: 2.2rem; }
-      .nav-links { gap: 1rem; font-size: 0.9rem; }
+      .hero { flex-direction: column; text-align: center; }
+      .hero-text h1 { font-size: 2.3rem; }
+      .nav-links { gap: 1rem; font-size: 0.85rem; }
+      .ronaldo-banner { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -279,106 +442,197 @@
 
   <!-- Navbar -->
   <nav>
-    <div class="nav-logo">9h53</div>
+    <div class="nav-logo">
+      <i class="fas fa-code"></i> Nhóm 9h53
+    </div>
     <ul class="nav-links">
       <li><a href="#about">Mục đích</a></li>
       <li><a href="#styles">5 Style Portfolio</a></li>
-      <li><a href="#skills">Kỹ năng Vui</a></li>
+      <li><a href="#skills">Kỹ năng Mẫu</a></li>
+      <li><a href="#projects">Dự án Mẫu</a></li>
       <li><a href="#contact">GitHub</a></li>
     </ul>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
-    <h1>Nhóm <span>9h53</span></h1>
-    <p>Đề tài: IT Career Portfolio Showcase | Môn học: SS004 (Kỹ năng Nghề nghiệp)</p>
-    <p style="font-size: 1rem; color: #a0a0b8;">Website minh họa mẫu cho <b>Style 2: Personal Website (Deploy thật)</b> nhằm định hướng cho các bạn sinh viên tạo hồ sơ xin việc ấn tượng.</p>
-    <a href="#about" class="btn-cta">Khám phá Ngay <i class="fas fa-arrow-down"></i></a>
+    <div class="hero-text">
+      <span class="sample-badge-note"><i class="fas fa-graduation-cap"></i> Môn SS004 - Kỹ năng Nghề nghiệp</span>
+      <h1>Nhóm <span>9h53</span></h1>
+      <p>Đề tài: <b>IT Career Portfolio Showcase</b><br>Tạo lập ý tưởng và định hướng giúp sinh viên IT tự tin xây dựng Portfolio chuẩn mực để ứng tuyển việc làm thành công.</p>
+      <a href="#styles" class="btn-cta">Khám Phá 5 Style Portfolio <i class="fas fa-arrow-down"></i></a>
+    </div>
+    <div class="hero-avatar-box">
+      <!-- Image: Ronaldo Inspiration -->
+      <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=600&auto=format&fit=crop" alt="Cristiano Ronaldo Inspiration" class="ronaldo-img">
+    </div>
   </section>
 
   <!-- About Section -->
   <section id="about">
     <h2 class="section-title">Mục đích <span>Đề tài</span></h2>
-    <p class="section-subtitle">Giúp sinh viên ngành IT tự tin xây dựng thương hiệu cá nhân</p>
+    <p class="section-subtitle">Định hướng nghề nghiệp & giải pháp xây dựng hồ sơ ứng tuyển IT</p>
     <div class="about-card">
-      <h3 style="margin-bottom: 1rem; color: var(--accent);"><i class="fas fa-bullseye"></i> Định hướng Đồ án Môn SS004</h3>
-      <p>Trong môn Kỹ năng Nghề nghiệp (SS004), việc chuẩn bị một Portfolio chỉn chu là bước đệm quan trọng để ứng tuyển vị trí Thực tập sinh hoặc Lập trình viên. Nhóm <b>9h53</b> thực hiện dự án này nhằm tạo ra một ví dụ minh họa trực quan về <b>Personal Website chuẩn chỉnh</b>.</p>
+      <h3 style="margin-bottom: 1rem; color: var(--accent);"><i class="fas fa-bullseye"></i> Sứ mệnh dự án</h3>
+      <p>Môn học Kỹ năng Nghề nghiệp (SS004) yêu cầu sinh viên sẵn sàng cho thị trường lao động. Nhóm <b>9h53</b> thực hiện đề tài phân tích và xây dựng mẫu <b>5 phong cách Portfolio</b> phổ biến nhất hiện nay.</p>
       <br>
-      <p>Trang web này tập trung chứng minh tính hiệu quả của việc tự code & deploy một website cá nhân thực tế lên môi trường Internet, giúp nhà tuyển dụng đánh giá cao tư duy làm sản phẩm của bạn.</p>
+      <p>Trang web bạn đang xem chính là ví dụ minh họa trực tiếp cho <b>Style 2: Personal Website (Deploy thật)</b> — minh chứng cho tư duy lập trình và khả năng hoàn thiện sản phẩm thực tế.</p>
     </div>
   </section>
 
   <!-- 5 Styles Showcase Section -->
   <section id="styles">
-    <h2 class="section-title">Tổng quan <span>5 Style Portfolio</span></h2>
-    <p class="section-subtitle">Các phong cách thể hiện Portfolio phổ biến dành cho dân IT</p>
+    <h2 class="section-title">Phân tích <span>5 Style Portfolio</span></h2>
+    <p class="section-subtitle">Tổng hợp từ số liệu Báo cáo Thị trường Tuyển dụng ITviec</p>
+    
     <div class="styles-grid">
       
+      <!-- Style 1 -->
       <div class="style-card">
-        <span class="style-badge">Style 1</span>
-        <h3>PDF Standard Canvas</h3>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Dạng hồ sơ tài liệu truyền thống. Nhẹ nhàng, dễ in ấn và thích hợp đính kèm qua Email.</p>
+        <div>
+          <span class="style-num">Style 1</span>
+          <h3>GitHub-as-portfolio</h3>
+          <p>README profile + pinned repos + lịch sử commit làm bằng chứng trực tiếp. Phù hợp nhất cho Back-end/Full-stack/Data — đúng nhóm mà báo cáo ITviec ghi nhận nhu cầu tuyển cao nhất (Back-end 54,2%, Full-stack 45,8%, tr.24).<br><br><i>Nhược điểm:</i> không có ngữ cảnh, nhà tuyển dụng phải tự suy ra vấn đề bạn giải quyết.</p>
+        </div>
       </div>
 
+      <!-- Style 2 -->
       <div class="style-card active">
-        <span class="style-badge" style="background: var(--primary); color: #fff;">Style 2 (Trang này)</span>
-        <h3>Personal Website (Deploy)</h3>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Website cá nhân tùy biến giao diện, sử dụng hiệu ứng tương tác mượt mà và deploy công khai.</p>
+        <div>
+          <span class="style-num" style="background: var(--primary); color: #fff;">Style 2 (Trang hiện tại)</span>
+          <h3>Personal website (deploy thật)</h3>
+          <p>Trang web tự làm bằng chính stack đang học (React/Next.js…), có demo project chạy được, link GitHub, CV. Đây là style "nặng ký" nhất vì vừa chứng minh kỹ năng lập trình vừa là sản phẩm portfolio. Hợp với Front-end/Full-stack.</p>
+        </div>
       </div>
 
+      <!-- Style 3 -->
       <div class="style-card">
-        <span class="style-badge">Style 3</span>
-        <h3>Interactive / Game-like</h3>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Dạng trải nghiệm tương tác hoặc game 2D giúp người xem vừa khám phá vừa tương tác.</p>
+        <div>
+          <span class="style-num">Style 3</span>
+          <h3>Notion-based portfolio</h3>
+          <p>Dùng Notion làm trang case-study: mỗi dự án viết bối cảnh — vai trò — quyết định — kết quả. Không cần biết deploy web, dựng nhanh, sửa dễ. Rất phù hợp sinh viên năm 3 chưa vững kỹ thuật web nhưng cần trình bày project môn học/đồ án. Đây cũng là hình thức khớp với điểm mình từng nói: portfolio thời AI cần thể hiện quá trình ra quyết định, không chỉ code.</p>
+        </div>
       </div>
 
+      <!-- Style 4 -->
       <div class="style-card">
-        <span class="style-badge">Style 4</span>
-        <h3>GitHub README Profile</h3>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Gọn gàng ngay trên GitHub Profile, phù hợp cho Backend Devs tập trung thể hiện Code.</p>
+        <div>
+          <span class="style-num">Style 4</span>
+          <h3>LinkedIn profile là portfolio chính</h3>
+          <p>Ở Việt Nam, nhiều sinh viên/fresher dùng LinkedIn thay vì trang riêng — đỡ chi phí, tận dụng sẵn mạng lưới. Báo cáo ITviec cho thấy LinkedIn là kênh tìm việc/freelance đứng thứ 3 (31,8% với freelance, tr.67), thấp hơn hẳn "bạn bè/người quen" (63,6%) — phản ánh đúng thực trạng tuyển dụng VN vẫn dựa nhiều vào quan hệ hơn là portfolio công khai.</p>
+        </div>
       </div>
 
+      <!-- Style 5 -->
       <div class="style-card">
-        <span class="style-badge">Style 5</span>
-        <h3>Minimalist Tech Blog</h3>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Kết hợp chia sẻ bài viết kỹ thuật & hồ sơ năng lực cá nhân một cách tối giản.</p>
+        <div>
+          <span class="style-num">Style 5</span>
+          <h3>PDF/case-study portfolio (dạng doc gửi kèm CV)</h3>
+          <p>File PDF trình bày 2-3 dự án tiêu biểu, kèm hình ảnh, số liệu kết quả. Không cần hạ tầng kỹ thuật, dễ gửi qua email tuyển dụng — hợp với Tester/QA-QC, Business Analyst hoặc Data Analyst, nơi "sản phẩm" là report/test case chứ không phải code chạy được.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Ronaldo Motivation Banner -->
+    <div class="ronaldo-banner">
+      <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=400&auto=format&fit=crop" alt="Ronaldo Motivation">
+      <div>
+        <blockquote>"Talent without working hard is nothing. Tương tự trong lập trình, kỹ năng tốt mà không biết cách trình bày trong Portfolio thì nhà tuyển dụng cũng không thể biết bạn giỏi ra sao!"</blockquote>
+        <cite>- Tinh thần CR7 & Đồ án SS004</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section (Sample for IT Student) -->
+  <section id="skills">
+    <h2 class="section-title">Bộ Kỹ năng <span>(Mẫu Sinh viên IT)</span></h2>
+    <p class="section-subtitle"><span class="sample-badge-note">Nội dung tham khảo dành cho sinh viên xây dựng hồ sơ</span></p>
+    
+    <div class="skills-grid">
+      
+      <div class="skill-card">
+        <div class="skill-header">
+          <h4><i class="fab fa-react" style="color: #61dafb;"></i> ReactJS / Next.js</h4>
+          <span class="skill-level">Khá (75%)</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-header">
+          <h4><i class="fab fa-node-js" style="color: #68a063;"></i> Node.js / Express</h4>
+          <span class="skill-level">Cơ bản (65%)</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 65%;"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-header">
+          <h4><i class="fas fa-database" style="color: #4479a1;"></i> MySQL / MongoDB</h4>
+          <span class="skill-level">Khá (70%)</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-header">
+          <h4><i class="fab fa-git-alt" style="color: #f05032;"></i> Git / GitHub Workflow</h4>
+          <span class="skill-level">Thành thạo (85%)</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
       </div>
 
     </div>
   </section>
 
-  <!-- Playful Skills Section -->
-  <section id="skills">
-    <h2 class="section-title">Bộ Kỹ năng <span>Vui vẻ</span></h2>
-    <p class="section-subtitle">Những "kỹ năng ẩn" không ghi trong CV của Lập trình viên</p>
-    <div class="skills-grid">
+  <!-- Projects Section (Sample Projects) -->
+  <section id="projects">
+    <h2 class="section-title">Dự án Tiêu biểu <span>(Mẫu Tham khảo)</span></h2>
+    <p class="section-subtitle"><span class="sample-badge-note">Cách trình bày dự án chuẩn mực dành cho bài làm đồ án môn học</span></p>
+
+    <div class="projects-grid">
       
-      <div class="skill-card">
-        <div class="skill-icon"><i class="fas fa-coffee"></i></div>
-        <h4>Caffeine Driven</h4>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">Biến cà phê thành Code</p>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 100%;"></div></div>
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=600&auto=format&fit=crop" alt="E-Commerce Project" class="project-img">
+        <div class="project-info">
+          <h3>E-Commerce Web App</h3>
+          <p>Website bán hàng thời trang trực tuyến với đầy đủ tính năng giỏ hàng, thanh toán VNPAY và trang Quản trị Admin.</p>
+          <div class="project-tags">
+            <span class="tag">ReactJS</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">MongoDB</span>
+          </div>
+        </div>
       </div>
 
-      <div class="skill-card">
-        <div class="skill-icon"><i class="fas fa-search"></i></div>
-        <h4>Google & StackOverflow</h4>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">Master kỹ năng Search Bug</p>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 99%;"></div></div>
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=600&auto=format&fit=crop" alt="Chat Application" class="project-img">
+        <div class="project-info">
+          <h3>Realtime Chat Application</h3>
+          <p>Ứng dụng nhắn tin tức thời hỗ trợ gửi tin nhắn nhóm và thông báo đẩy theo thời gian thực sử dụng Socket.io.</p>
+          <div class="project-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">Socket.io</span>
+            <span class="tag">TailwindCSS</span>
+          </div>
+        </div>
       </div>
 
-      <div class="skill-card">
-        <div class="skill-icon"><i class="fas fa-bug"></i></div>
-        <h4>Bug Creator & Fixer</h4>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">Tạo bug và tự sửa chính nó</p>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-icon"><i class="fas fa-robot"></i></div>
-        <h4>AI Prompt Engineer</h4>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">Trò chuyện cùng AI làm đồ án</p>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+      <!-- Project 3 -->
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=600&auto=format&fit=crop" alt="Task Management" class="project-img">
+        <div class="project-info">
+          <h3>Task Management Kanban</h3>
+          <p>Ứng dụng quản lý công việc cá nhân và làm việc nhóm theo mô hình Kanban Drag & Drop tương tác linh hoạt.</p>
+          <div class="project-tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -386,11 +640,10 @@
 
   <!-- Contact & GitHub Section -->
   <section id="contact">
-    <h2 class="section-title">Liên hệ <span>& Nguồn</span></h2>
+    <h2 class="section-title">Thông tin <span>Liên hệ</span></h2>
     <div class="contact-box">
-      <h3>Sản phẩm thuộc Nhóm 9h53</h3>
-      <p style="color: var(--text-muted); margin-top: 0.5rem;">Môn học: SS004 - Kỹ năng Nghề nghiệp</p>
-      <br>
+      <h3>Sản phẩm Đồ án môn SS004 - Nhóm 9h53</h3>
+      <p style="color: var(--text-muted); margin-top: 0.5rem;">Tài khoản GitHub đại diện nhóm:</p>
       <a href="https://github.com/allendq1-lmq" target="_blank" class="github-link">
         <i class="fab fa-github"></i> github.com/allendq1-lmq
       </a>
@@ -399,7 +652,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Nhóm 9h53 - Đồ án Môn SS004. Built with HTML, CSS & JavaScript.</p>
+    <p>&copy; 2026 Nhóm 9h53 - Môn SS004 (Kỹ năng Nghề nghiệp). SIUUU! ⚽</p>
   </footer>
 
   <!-- Particle JS Script -->
@@ -408,7 +661,7 @@
     const ctx = canvas.getContext('2d');
 
     let particles = [];
-    const particleCount = 60;
+    const particleCount = 50;
 
     function resizeCanvas() {
       canvas.width = window.innerWidth;
@@ -422,8 +675,8 @@
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.8;
-        this.vy = (Math.random() - 0.5) * 0.8;
+        this.vx = (Math.random() - 0.5) * 0.6;
+        this.vy = (Math.random() - 0.5) * 0.6;
         this.radius = Math.random() * 2 + 1;
       }
 
@@ -438,7 +691,7 @@
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = '#e31b6d';
+        ctx.fillStyle = '#3b82f6';
         ctx.fill();
       }
     }
@@ -459,9 +712,9 @@
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 120) {
+          if (dist < 130) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(227, 27, 109, ${1 - dist / 120})`;
+            ctx.strokeStyle = `rgba(59, 130, 246, ${1 - dist / 130})`;
             ctx.lineWidth = 0.5;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nhóm 9h53 | IT Career Portfolio Showcase (SS004)</title>
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --bg-color: #111116;
+      --card-bg: #1d1d26;
+      --primary: #e31b6d;
+      --accent: #00f2fe;
+      --text-main: #ffffff;
+      --text-muted: #a0a0b8;
+      --border-color: #2e2e3e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Particle Canvas Background */
+    #particle-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Navigation Bar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(17, 17, 22, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Sections Shared Styling */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 2rem 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-title span {
+      color: var(--primary);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      font-size: 1.05rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 0;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border: 2px solid var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-cta:hover {
+      background-color: var(--primary);
+      box-shadow: 0 0 15px rgba(227, 27, 109, 0.5);
+    }
+
+    /* About & Purpose Card */
+    .about-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Styles Showcase Grid */
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .style-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 1.8rem;
+      border-radius: 8px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .style-card.active {
+      border-color: var(--primary);
+      box-shadow: 0 0 15px rgba(227, 27, 109, 0.2);
+    }
+
+    .style-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .style-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      background: rgba(227, 27, 109, 0.2);
+      color: var(--primary);
+      font-size: 0.8rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    /* Playful Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .skill-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .skill-bar-bg {
+      background: #111116;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 4px;
+    }
+
+    /* Contact & GitHub Footer */
+    .contact-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      text-align: center;
+      padding: 3rem;
+      border-radius: 12px;
+    }
+
+    .github-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent);
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    .github-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem; }
+      .hero h1 { font-size: 2.2rem; }
+      .nav-links { gap: 1rem; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-logo">9h53</div>
+    <ul class="nav-links">
+      <li><a href="#about">Mục đích</a></li>
+      <li><a href="#styles">5 Style Portfolio</a></li>
+      <li><a href="#skills">Kỹ năng Vui</a></li>
+      <li><a href="#contact">GitHub</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <h1>Nhóm <span>9h53</span></h1>
+    <p>Đề tài: IT Career Portfolio Showcase | Môn học: SS004 (Kỹ năng Nghề nghiệp)</p>
+    <p style="font-size: 1rem; color: #a0a0b8;">Website minh họa mẫu cho <b>Style 2: Personal Website (Deploy thật)</b> nhằm định hướng cho các bạn sinh viên tạo hồ sơ xin việc ấn tượng.</p>
+    <a href="#about" class="btn-cta">Khám phá Ngay <i class="fas fa-arrow-down"></i></a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">Mục đích <span>Đề tài</span></h2>
+    <p class="section-subtitle">Giúp sinh viên ngành IT tự tin xây dựng thương hiệu cá nhân</p>
+    <div class="about-card">
+      <h3 style="margin-bottom: 1rem; color: var(--accent);"><i class="fas fa-bullseye"></i> Định hướng Đồ án Môn SS004</h3>
+      <p>Trong môn Kỹ năng Nghề nghiệp (SS004), việc chuẩn bị một Portfolio chỉn chu là bước đệm quan trọng để ứng tuyển vị trí Thực tập sinh hoặc Lập trình viên. Nhóm <b>9h53</b> thực hiện dự án này nhằm tạo ra một ví dụ minh họa trực quan về <b>Personal Website chuẩn chỉnh</b>.</p>
+      <br>
+      <p>Trang web này tập trung chứng minh tính hiệu quả của việc tự code & deploy một website cá nhân thực tế lên môi trường Internet, giúp nhà tuyển dụng đánh giá cao tư duy làm sản phẩm của bạn.</p>
+    </div>
+  </section>
+
+  <!-- 5 Styles Showcase Section -->
+  <section id="styles">
+    <h2 class="section-title">Tổng quan <span>5 Style Portfolio</span></h2>
+    <p class="section-subtitle">Các phong cách thể hiện Portfolio phổ biến dành cho dân IT</p>
+    <div class="styles-grid">
+      
+      <div class="style-card">
+        <span class="style-badge">Style 1</span>
+        <h3>PDF Standard Canvas</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Dạng hồ sơ tài liệu truyền thống. Nhẹ nhàng, dễ in ấn và thích hợp đính kèm qua Email.</p>
+      </div>
+
+      <div class="style-card active">
+        <span class="style-badge" style="background: var(--primary); color: #fff;">Style 2 (Trang này)</span>
+        <h3>Personal Website (Deploy)</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Website cá nhân tùy biến giao diện, sử dụng hiệu ứng tương tác mượt mà và deploy công khai.</p>
+      </div>
+
+      <div class="style-card">
+        <span class="style-badge">Style 3</span>
+        <h3>Interactive / Game-like</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Dạng trải nghiệm tương tác hoặc game 2D giúp người xem vừa khám phá vừa tương tác.</p>
+      </div>
+
+      <div class="style-card">
+        <span class="style-badge">Style 4</span>
+        <h3>GitHub README Profile</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Gọn gàng ngay trên GitHub Profile, phù hợp cho Backend Devs tập trung thể hiện Code.</p>
+      </div>
+
+      <div class="style-card">
+        <span class="style-badge">Style 5</span>
+        <h3>Minimalist Tech Blog</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Kết hợp chia sẻ bài viết kỹ thuật & hồ sơ năng lực cá nhân một cách tối giản.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Playful Skills Section -->
+  <section id="skills">
+    <h2 class="section-title">Bộ Kỹ năng <span>Vui vẻ</span></h2>
+    <p class="section-subtitle">Những "kỹ năng ẩn" không ghi trong CV của Lập trình viên</p>
+    <div class="skills-grid">
+      
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-coffee"></i></div>
+        <h4>Caffeine Driven</h4>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Biến cà phê thành Code</p>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 100%;"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-search"></i></div>
+        <h4>Google & StackOverflow</h4>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Master kỹ năng Search Bug</p>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 99%;"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-bug"></i></div>
+        <h4>Bug Creator & Fixer</h4>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Tạo bug và tự sửa chính nó</p>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-robot"></i></div>
+        <h4>AI Prompt Engineer</h4>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Trò chuyện cùng AI làm đồ án</p>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact & GitHub Section -->
+  <section id="contact">
+    <h2 class="section-title">Liên hệ <span>& Nguồn</span></h2>
+    <div class="contact-box">
+      <h3>Sản phẩm thuộc Nhóm 9h53</h3>
+      <p style="color: var(--text-muted); margin-top: 0.5rem;">Môn học: SS004 - Kỹ năng Nghề nghiệp</p>
+      <br>
+      <a href="https://github.com/allendq1-lmq" target="_blank" class="github-link">
+        <i class="fab fa-github"></i> github.com/allendq1-lmq
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Nhóm 9h53 - Đồ án Môn SS004. Built with HTML, CSS & JavaScript.</p>
+  </footer>
+
+  <!-- Particle JS Script -->
+  <script>
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let particles = [];
+    const particleCount = 60;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.8;
+        this.vy = (Math.random() - 0.5) * 0.8;
+        this.radius = Math.random() * 2 + 1;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = '#e31b6d';
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(227, 27, 109, ${1 - dist / 120})`;
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>

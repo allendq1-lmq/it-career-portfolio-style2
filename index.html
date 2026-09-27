@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nhóm 9h53 | IT Career Portfolio Showcase (SS004)</title>
-  <!-- Google Fonts: Sans-Serif (Inter) & FontAwesome Icons -->
+  <!-- Google Fonts: Inter & FontAwesome Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
@@ -258,7 +258,7 @@
       line-height: 1.6;
     }
 
-    /* Skills Matrix (Sample) */
+    /* Skills Matrix */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -305,7 +305,7 @@
       border-radius: 4px;
     }
 
-    /* Projects Grid (Sample) */
+    /* Projects Grid */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -439,10 +439,10 @@
 </head>
 <body>
 
-  <!-- Particle Background -->
+  <!-- Particle Canvas Background -->
   <canvas id="particle-canvas"></canvas>
 
-  <!-- Navbar -->
+  <!-- Navigation Bar -->
   <nav>
     <div class="nav-logo">
       <i class="fas fa-code"></i> Nhóm 9h53
@@ -465,7 +465,6 @@
       <a href="#styles" class="btn-cta">Khám Phá 5 Style Portfolio <i class="fas fa-arrow-down"></i></a>
     </div>
     <div class="hero-avatar-box">
-      <!-- Direct Image Link CR7 -->
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo" class="ronaldo-img">
     </div>
   </section>
@@ -488,7 +487,6 @@
     <p class="section-subtitle">Tổng hợp từ số liệu Báo cáo Thị trường Tuyển dụng ITviec</p>
     
     <div class="styles-grid">
-      
       <!-- Style 1 -->
       <div class="style-card">
         <div>
@@ -512,7 +510,7 @@
         <div>
           <span class="style-num">Style 3</span>
           <h3>Notion-based portfolio</h3>
-          <p>Dùng Notion làm trang case-study: mỗi dự án viết bối cảnh — vai trò — quyết định — kết quả. Không cần biết deploy web, dựng nhanh, sửa dễ. Rất phù hợp sinh viên năm 3 chưa vững kỹ thuật web nhưng cần trình trình bày project môn học/đồ án. Đây cũng là hình thức khớp với điểm mình từng nói: portfolio thời AI cần thể hiện quá trình ra quyết định, không chỉ code.</p>
+          <p>Dùng Notion làm trang case-study: mỗi dự án viết bối cảnh — vai trò — quyết định — kết quả. Không cần biết deploy web, dựng nhanh, sửa dễ. Rất phù hợp sinh viên năm 3 chưa vững kỹ thuật web nhưng cần trình bày project môn học/đồ án. Đây cũng là hình thức khớp với điểm mình từng nói: portfolio thời AI cần thể hiện quá trình ra quyết định, không chỉ code.</p>
         </div>
       </div>
 
@@ -533,7 +531,6 @@
           <p>File PDF trình bày 2-3 dự án tiêu biểu, kèm hình ảnh, số liệu kết quả. Không cần hạ tầng kỹ thuật, dễ gửi qua email tuyển dụng — hợp với Tester/QA-QC, Business Analyst hoặc Data Analyst, nơi "sản phẩm" là report/test case chứ không phải code chạy được.</p>
         </div>
       </div>
-
     </div>
 
     <!-- Ronaldo Motivation Banner -->
@@ -546,13 +543,12 @@
     </div>
   </section>
 
-  <!-- Skills Section (Sample for IT Student) -->
+  <!-- Skills Section -->
   <section id="skills">
     <h2 class="section-title">Bộ Kỹ năng <span>(Mẫu Sinh viên IT)</span></h2>
     <p class="section-subtitle"><span class="sample-badge-note">Nội dung tham khảo dành cho sinh viên xây dựng hồ sơ</span></p>
     
     <div class="skills-grid">
-      
       <div class="skill-card">
         <div class="skill-header">
           <h4><i class="fab fa-react" style="color: #61dafb;"></i> ReactJS / Next.js</h4>
@@ -584,17 +580,15 @@
         </div>
         <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
       </div>
-
     </div>
   </section>
 
-  <!-- Projects Section (Sample Projects) -->
+  <!-- Projects Section -->
   <section id="projects">
     <h2 class="section-title">Dự án Tiêu biểu <span>(Mẫu Tham khảo)</span></h2>
     <p class="section-subtitle"><span class="sample-badge-note">Cách trình bày dự án chuẩn mực dành cho bài làm đồ án môn học</span></p>
 
     <div class="projects-grid">
-      
       <!-- Project 1 -->
       <div class="project-card">
         <img src="https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=600&auto=format&fit=crop" alt="E-Commerce Project" class="project-img">
@@ -636,11 +630,10 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Contact & GitHub Section -->
+  <!-- Contact Section -->
   <section id="contact">
     <h2 class="section-title">Thông tin <span>Liên hệ</span></h2>
     <div class="contact-box">
@@ -657,7 +650,7 @@
     <p>&copy; 2026 Nhóm 9h53 - Môn SS004 (Kỹ năng Nghề nghiệp). SIUUU! ⚽</p>
   </footer>
 
-  <!-- Particle JS Script -->
+  <!-- Particle Canvas Script -->
   <script>
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');

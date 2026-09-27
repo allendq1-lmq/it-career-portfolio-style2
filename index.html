@@ -35,7 +35,7 @@
       overflow-x: hidden;
     }
 
-    /* Particle Canvas Background */
+    /* Particle Background */
     #particle-canvas {
       position: fixed;
       top: 0;
@@ -139,7 +139,7 @@
     }
 
     .hero-text {
-      flex: 1;
+      flex: 1.2;
     }
 
     .hero-text h1 {
@@ -160,7 +160,7 @@
     }
 
     .hero-avatar-box {
-      flex: 1;
+      flex: 0.8;
       display: flex;
       justify-content: center;
       position: relative;
@@ -168,12 +168,12 @@
     }
 
     .ronaldo-img {
-      width: 300px;
-      height: 300px;
+      width: 320px;
+      height: 320px;
       object-fit: cover;
       border-radius: 50%;
       border: 4px solid var(--primary);
-      box-shadow: 0 0 35px rgba(59, 130, 246, 0.5);
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
       transition: transform 0.4s ease;
       background-color: var(--card-bg);
     }
@@ -208,10 +208,10 @@
       margin-bottom: 2rem;
     }
 
-    /* 5 Styles Showcase Grid */
+    /* 4 Styles Grid */
     .styles-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       gap: 1.5rem;
     }
 
@@ -226,13 +226,9 @@
       transition: transform 0.3s, border-color 0.3s;
     }
 
-    .style-card.active {
-      border-color: var(--primary);
-      box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
-    }
-
     .style-card:hover {
       transform: translateY(-5px);
+      border-color: var(--primary);
     }
 
     .style-num {
@@ -250,15 +246,30 @@
     .style-card h3 {
       font-size: 1.25rem;
       margin-bottom: 0.75rem;
+      color: var(--text-main);
     }
 
-    .style-card p {
+    .style-card .concept {
       font-size: 0.92rem;
       color: var(--text-muted);
-      line-height: 1.6;
+      margin-bottom: 1rem;
+      line-height: 1.5;
     }
 
-    /* Skills Matrix */
+    .style-card .core-element {
+      font-size: 0.88rem;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 0.8rem;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent);
+      color: #cbd5e1;
+    }
+
+    .style-card .core-element strong {
+      color: var(--accent);
+    }
+
+    /* Skills Grid */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -373,8 +384,8 @@
     }
 
     .ronaldo-banner img {
-      width: 100px;
-      height: 100px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid var(--primary);
@@ -439,19 +450,19 @@
 </head>
 <body>
 
-  <!-- Particle Canvas Background -->
+  <!-- Background Particle -->
   <canvas id="particle-canvas"></canvas>
 
-  <!-- Navigation Bar -->
+  <!-- Navbar -->
   <nav>
     <div class="nav-logo">
-      <i class="fas fa-code"></i> Nhóm 9h53
+      <i class="fas fa-terminal"></i> Nhóm 9h53
     </div>
     <ul class="nav-links">
       <li><a href="#about">Mục đích</a></li>
-      <li><a href="#styles">5 Style Portfolio</a></li>
-      <li><a href="#skills">Kỹ năng Mẫu</a></li>
-      <li><a href="#projects">Dự án Mẫu</a></li>
+      <li><a href="#styles">4 Style Portfolio</a></li>
+      <li><a href="#skills">Kỹ năng</a></li>
+      <li><a href="#projects">Dự án</a></li>
       <li><a href="#contact">GitHub</a></li>
     </ul>
   </nav>
@@ -459,10 +470,10 @@
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="hero-text">
-      <span class="sample-badge-note"><i class="fas fa-graduation-cap"></i> Môn SS004 - Kỹ năng Nghề nghiệp</span>
+      <span class="sample-badge-note"><i class="fas fa-trophy"></i> SS004 - Kỹ năng Nghề nghiệp</span>
       <h1>Nhóm <span>9h53</span></h1>
-      <p>Đề tài: <b>IT Career Portfolio Showcase</b><br>Tạo lập ý tưởng và định hướng giúp sinh viên IT tự tin xây dựng Portfolio chuẩn mực để ứng tuyển việc làm thành công.</p>
-      <a href="#styles" class="btn-cta">Khám Phá 5 Style Portfolio <i class="fas fa-arrow-down"></i></a>
+      <p>Đề tài: <b>IT Career Portfolio Showcase</b><br>Lấy cảm hứng từ kỷ luật và tư duy đỉnh cao của CR7: Code hay chưa đủ, bạn phải biết cách "trình diễn" năng lực của mình đúng cách trước nhà tuyển dụng!</p>
+      <a href="#styles" class="btn-cta">Khám Phá 4 Phong Cách <i class="fas fa-arrow-down"></i></a>
     </div>
     <div class="hero-avatar-box">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo" class="ronaldo-img">
@@ -472,86 +483,107 @@
   <!-- About Section -->
   <section id="about">
     <h2 class="section-title">Mục đích <span>Đề tài</span></h2>
-    <p class="section-subtitle">Định hướng nghề nghiệp & giải pháp xây dựng hồ sơ ứng tuyển IT</p>
+    <p class="section-subtitle">Định hướng & Chuẩn hóa Hồ sơ Ứng tuyển cho Sinh viên IT</p>
     <div class="about-card">
       <h3 style="margin-bottom: 1rem; color: var(--accent);"><i class="fas fa-bullseye"></i> Sứ mệnh dự án</h3>
-      <p>Môn học Kỹ năng Nghề nghiệp (SS004) yêu cầu sinh viên sẵn sàng cho thị trường lao động. Nhóm <b>9h53</b> thực hiện đề tài phân tích và xây dựng mẫu <b>5 phong cách Portfolio</b> phổ biến nhất hiện nay.</p>
+      <p>Trong ngành IT, "sản phẩm thực tế" lên tiếng mạnh hơn hàng ngàn lời nói. Nhóm <b>9h53</b> thực hiện đề tài này nhằm tổng hợp, phân tích và dựng mẫu <b>4 phong cách Portfolio</b> chuẩn mực giúp sinh viên tự tin chinh phục nhà tuyển dụng.</p>
       <br>
-      <p>Trang web bạn đang xem chính là ví dụ minh họa trực tiếp cho <b>Style 2: Personal Website (Deploy thật)</b> — minh chứng cho tư duy lập trình và khả năng hoàn thiện sản phẩm thực tế.</p>
+      <p>Trang web này cũng chính là minh chứng thực tế cho <i>Style 3: The Interactive Style</i> — ứng dụng hiệu ứng tương tác trực tiếp để làm nổi bật tư duy lập trình và thẩm mỹ giao diện.</p>
     </div>
   </section>
 
-  <!-- 5 Styles Showcase Section -->
+  <!-- 4 Styles Section -->
   <section id="styles">
-    <h2 class="section-title">Phân tích <span>5 Style Portfolio</span></h2>
-    <p class="section-subtitle">Tổng hợp từ số liệu Báo cáo Thị trường Tuyển dụng ITviec</p>
+    <h2 class="section-title">Chi tiết <span>4 Style Portfolio</span></h2>
+    <p class="section-subtitle">Lựa chọn phong cách phù hợp nhất với vị trí và mục tiêu sự nghiệp của bạn</p>
     
     <div class="styles-grid">
+      
       <!-- Style 1 -->
       <div class="style-card">
         <div>
-          <span class="style-num">Style 1</span>
-          <h3>GitHub-as-portfolio</h3>
-          <p>README profile + pinned repos + lịch sử commit làm bằng chứng trực tiếp. Phù hợp nhất cho Back-end/Full-stack/Data — đúng nhóm mà báo cáo ITviec ghi nhận nhu cầu tuyển cao nhất (Back-end 54,2%, Full-stack 45,8%, tr.24).<br><br><i>Nhược điểm:</i> không có ngữ cảnh, nhà tuyển dụng phải tự suy ra vấn đề bạn giải quyết.</p>
+          <span class="style-num">01</span>
+          <h3>The Project-Based</h3>
+          <p class="concept"><b>Khái niệm:</b> Giao diện dạng ô lưới trực quan, tập trung hiển thị danh sách các ứng dụng, công cụ hoặc dashboard đã hoàn thành.</p>
+        </div>
+        <div class="core-element">
+          <strong>Thành phần cốt lõi:</strong> Mỗi thẻ dự án đi kèm Live Demo link, GitHub repo và tóm tắt ngắn các project đã làm.
         </div>
       </div>
 
       <!-- Style 2 -->
-      <div class="style-card active">
+      <div class="style-card">
         <div>
-          <span class="style-num" style="background: var(--primary); color: #fff;">Style 2 (Trang hiện tại)</span>
-          <h3>Personal website (deploy thật)</h3>
-          <p>Trang web tự làm bằng chính stack đang học (React/Next.js…), có demo project chạy được, link GitHub, CV. Đây là style "nặng ký" nhất vì vừa chứng minh kỹ năng lập trình vừa là sản phẩm portfolio. Hợp với Front-end/Full-stack.</p>
+          <span class="style-num">02</span>
+          <h3>The Minimalist</h3>
+          <p class="concept"><b>Khái niệm:</b> Giao diện 1 trang cuộn tinh gọn, tập trung hoàn toàn vào văn bản, thông số kỹ thuật và chứng chỉ chuyên môn.</p>
+        </div>
+        <div class="core-element">
+          <strong>Thành phần cốt lõi:</strong> Tóm tắt năng lực, chứng chỉ quốc tế (AWS, Cisco, CompTIA), lịch sử công tác và thông tin liên lạc trực tiếp.
         </div>
       </div>
 
       <!-- Style 3 -->
-      <div class="style-card">
+      <div class="style-card" style="border-color: var(--primary);">
         <div>
-          <span class="style-num">Style 3</span>
-          <h3>Notion-based portfolio</h3>
-          <p>Dùng Notion làm trang case-study: mỗi dự án viết bối cảnh — vai trò — quyết định — kết quả. Không cần biết deploy web, dựng nhanh, sửa dễ. Rất phù hợp sinh viên năm 3 chưa vững kỹ thuật web nhưng cần trình bày project môn học/đồ án. Đây cũng là hình thức khớp với điểm mình từng nói: portfolio thời AI cần thể hiện quá trình ra quyết định, không chỉ code.</p>
+          <span class="style-num" style="background: var(--primary); color: #fff;">03 (Trang hiện tại)</span>
+          <h3>The Interactive Style</h3>
+          <p class="concept"><b>Khái niệm:</b> Dùng hiệu ứng chuyển động hoặc phần tử 3D để biến chính trang web thành sản phẩm chứng minh năng lực.</p>
+        </div>
+        <div class="core-element">
+          <strong>Thành phần cốt lõi:</strong> Trải nghiệm người dùng độc đáo, tư duy thẩm mỹ giao diện kết hợp kỹ thuật lập trình nâng cao.
         </div>
       </div>
 
       <!-- Style 4 -->
       <div class="style-card">
         <div>
-          <span class="style-num">Style 4</span>
-          <h3>LinkedIn profile là portfolio chính</h3>
-          <p>Ở Việt Nam, nhiều sinh viên/fresher dùng LinkedIn thay vì trang riêng — đỡ chi phí, tận dụng sẵn mạng lưới. Báo cáo ITviec cho thấy LinkedIn là kênh tìm việc/freelance đứng thứ 3 (31,8% với freelance, tr.67), thấp hơn hẳn "bạn bè/người quen" (63,6%) — phản ánh đúng thực trạng tuyển dụng VN vẫn dựa nhiều vào quan hệ hơn là portfolio công khai.</p>
+          <span class="style-num">04</span>
+          <h3>GitHub-as-portfolio</h3>
+          <p class="concept"><b>Khái niệm:</b> Dùng GitHub README profile + pinned repos + lịch sử commit làm bằng chứng trực tiếp.</p>
+        </div>
+        <div class="core-element">
+          <strong>Thành phần cốt lõi:</strong> Là minh chứng rõ ràng nhất về tư duy lập trình và các project đã từng build, giúp các nhà tuyển dụng dễ dàng sàng lọc.
         </div>
       </div>
 
-      <!-- Style 5 -->
-      <div class="style-card">
-        <div>
-          <span class="style-num">Style 5</span>
-          <h3>PDF/case-study portfolio (dạng doc gửi kèm CV)</h3>
-          <p>File PDF trình bày 2-3 dự án tiêu biểu, kèm hình ảnh, số liệu kết quả. Không cần hạ tầng kỹ thuật, dễ gửi qua email tuyển dụng — hợp với Tester/QA-QC, Business Analyst hoặc Data Analyst, nơi "sản phẩm" là report/test case chứ không phải code chạy được.</p>
-        </div>
-      </div>
     </div>
 
-    <!-- Ronaldo Motivation Banner -->
+    <!-- Ronaldo Quote Banner 1 -->
     <div class="ronaldo-banner">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Ronaldo Motivation">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Ronaldo Quote">
       <div>
-        <blockquote>"Talent without working hard is nothing. Tương tự trong lập trình, kỹ năng tốt mà không biết cách trình bày trong Portfolio thì nhà tuyển dụng cũng không thể biết bạn giỏi ra sao!"</blockquote>
-        <cite>- Tinh thần CR7 & Đồ án SS004</cite>
+        <blockquote>"Your love makes me strong, your hate makes me unstoppable. Trong nghề IT cũng vậy: Đừng sợ code lỗi hay bị Review từ chối, chính những Commit khắc phục khó khăn mới biến bạn thành một Senior tài năng!"</blockquote>
+        <cite>- Tinh thần CR7 & Bài học làm Portfolio</cite>
       </div>
     </div>
   </section>
 
   <!-- Skills Section -->
   <section id="skills">
-    <h2 class="section-title">Bộ Kỹ năng <span>(Mẫu Sinh viên IT)</span></h2>
-    <p class="section-subtitle"><span class="sample-badge-note">Nội dung tham khảo dành cho sinh viên xây dựng hồ sơ</span></p>
+    <h2 class="section-title">Bộ Kỹ năng <span>(Mẫu)</span></h2>
+    <p class="section-subtitle"><span class="sample-badge-note">Bộ kỹ năng mẫu chuẩn hóa cho sinh viên IT</span></p>
     
     <div class="skills-grid">
       <div class="skill-card">
         <div class="skill-header">
-          <h4><i class="fab fa-react" style="color: #61dafb;"></i> ReactJS / Next.js</h4>
+          <h4><i class="fab fa-react" style="color: #61dafb;"></i> Frontend (React / Next.js)</h4>
+          <span class="skill-level">Khá (80%)</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-header">
+          <h4><i class="fab fa-node-js" style="color: #68a063;"></i> Backend (Node.js / Express)</h4>
+          <span class="skill-level">Cơ bản (70%)</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-header">
+          <h4><i class="fas fa-database" style="color: #4479a1;"></i> Database (SQL / NoSQL)</h4>
           <span class="skill-level">Khá (75%)</span>
         </div>
         <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
@@ -559,23 +591,7 @@
 
       <div class="skill-card">
         <div class="skill-header">
-          <h4><i class="fab fa-node-js" style="color: #68a063;"></i> Node.js / Express</h4>
-          <span class="skill-level">Cơ bản (65%)</span>
-        </div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 65%;"></div></div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-header">
-          <h4><i class="fas fa-database" style="color: #4479a1;"></i> MySQL / MongoDB</h4>
-          <span class="skill-level">Khá (70%)</span>
-        </div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 70%;"></div></div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-header">
-          <h4><i class="fab fa-git-alt" style="color: #f05032;"></i> Git / GitHub Workflow</h4>
+          <h4><i class="fab fa-git-alt" style="color: #f05032;"></i> DevOps & Git Workflow</h4>
           <span class="skill-level">Thành thạo (85%)</span>
         </div>
         <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
@@ -585,16 +601,16 @@
 
   <!-- Projects Section -->
   <section id="projects">
-    <h2 class="section-title">Dự án Tiêu biểu <span>(Mẫu Tham khảo)</span></h2>
-    <p class="section-subtitle"><span class="sample-badge-note">Cách trình bày dự án chuẩn mực dành cho bài làm đồ án môn học</span></p>
+    <h2 class="section-title">Dự án Tiêu biểu <span>(Mẫu)</span></h2>
+    <p class="section-subtitle"><span class="sample-badge-note">Minh họa cách show case dự án ăn điểm với HR</span></p>
 
     <div class="projects-grid">
       <!-- Project 1 -->
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=600&auto=format&fit=crop" alt="E-Commerce Project" class="project-img">
+        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=600&auto=format&fit=crop" alt="E-Commerce" class="project-img">
         <div class="project-info">
-          <h3>E-Commerce Web App</h3>
-          <p>Website bán hàng thời trang trực tuyến với đầy đủ tính năng giỏ hàng, thanh toán VNPAY và trang Quản trị Admin.</p>
+          <h3>E-Commerce Dashboard</h3>
+          <p>Hệ thống quản lý bán hàng tích hợp thanh toán tự động, phân tích doanh thu thời gian thực.</p>
           <div class="project-tags">
             <span class="tag">ReactJS</span>
             <span class="tag">Node.js</span>
@@ -605,10 +621,10 @@
 
       <!-- Project 2 -->
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=600&auto=format&fit=crop" alt="Chat Application" class="project-img">
+        <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=600&auto=format&fit=crop" alt="Realtime Chat" class="project-img">
         <div class="project-info">
-          <h3>Realtime Chat Application</h3>
-          <p>Ứng dụng nhắn tin tức thời hỗ trợ gửi tin nhắn nhóm và thông báo đẩy theo thời gian thực sử dụng Socket.io.</p>
+          <h3>Realtime Chat Engine</h3>
+          <p>Ứng dụng nhắn tin bảo mật chuẩn End-to-End, hỗ trợ truyền tệp dung lượng lớn qua WebSocket.</p>
           <div class="project-tags">
             <span class="tag">Next.js</span>
             <span class="tag">Socket.io</span>
@@ -619,16 +635,25 @@
 
       <!-- Project 3 -->
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=600&auto=format&fit=crop" alt="Task Management" class="project-img">
+        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=600&auto=format&fit=crop" alt="DevOps Pipeline" class="project-img">
         <div class="project-info">
-          <h3>Task Management Kanban</h3>
-          <p>Ứng dụng quản lý công việc cá nhân và làm việc nhóm theo mô hình Kanban Drag & Drop tương tác linh hoạt.</p>
+          <h3>Automated CI/CD Pipeline</h3>
+          <p>Hệ thống tự động hóa Build - Test - Deploy lên AWS Docker Cloud dành cho dự án Microservices.</p>
           <div class="project-tags">
-            <span class="tag">TypeScript</span>
-            <span class="tag">Express.js</span>
-            <span class="tag">PostgreSQL</span>
+            <span class="tag">Docker</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">AWS</span>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Ronaldo Quote Banner 2 -->
+    <div class="ronaldo-banner">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Ronaldo Hard Work">
+      <div>
+        <blockquote>"Talent without working hard is nothing. Có tố chất lập trình nhưng không chủ động hoàn thiện Portfolio và rèn luyện mỗi ngày thì cơ hội ngon cũng sẽ thuộc về người khác!"</blockquote>
+        <cite>- CR7 Motivation</cite>
       </div>
     </div>
   </section>
@@ -638,7 +663,7 @@
     <h2 class="section-title">Thông tin <span>Liên hệ</span></h2>
     <div class="contact-box">
       <h3>Sản phẩm Đồ án môn SS004 - Nhóm 9h53</h3>
-      <p style="color: var(--text-muted); margin-top: 0.5rem;">Tài khoản GitHub đại diện nhóm:</p>
+      <p style="color: var(--text-muted); margin-top: 0.5rem;">Repository chứa toàn bộ mã nguồn bài tập lớn:</p>
       <a href="https://github.com/allendq1-lmq" target="_blank" class="github-link">
         <i class="fab fa-github"></i> github.com/allendq1-lmq
       </a>
@@ -650,13 +675,13 @@
     <p>&copy; 2026 Nhóm 9h53 - Môn SS004 (Kỹ năng Nghề nghiệp). SIUUU! ⚽</p>
   </footer>
 
-  <!-- Particle Canvas Script -->
+  <!-- Particle Animation Script -->
   <script>
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');
 
     let particles = [];
-    const particleCount = 40;
+    const particleCount = 45;
 
     function resizeCanvas() {
       canvas.width = window.innerWidth;

@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nhóm 9h53 | IT Career Portfolio Showcase (SS004)</title>
-  <!-- Google Fonts: Inter & FontAwesome Icons -->
+  
+  <!-- Google Fonts & FontAwesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
@@ -20,11 +21,16 @@
       --border-color: #1e293b;
     }
 
+    /* Fix lỗi cuộn trang bị che bởi Fixed Nav */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      scroll-behavior: smooth;
     }
 
     body {
@@ -92,7 +98,7 @@
     section {
       position: relative;
       z-index: 2;
-      padding: 6rem 2rem 4rem 2rem;
+      padding: 5rem 2rem 3rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -135,7 +141,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 2rem;
-      padding-top: 4rem;
+      padding-top: 5rem;
     }
 
     .hero-text {
@@ -441,7 +447,7 @@
 
     @media (max-width: 768px) {
       nav { padding: 1rem; }
-      .hero { flex-direction: column; text-align: center; }
+      .hero { flex-direction: column-reverse; text-align: center; padding-top: 6rem; }
       .hero-text h1 { font-size: 2.3rem; }
       .nav-links { gap: 1rem; font-size: 0.85rem; }
       .ronaldo-banner { flex-direction: column; text-align: center; }
@@ -476,7 +482,7 @@
       <a href="#styles" class="btn-cta">Khám Phá 4 Phong Cách <i class="fas fa-arrow-down"></i></a>
     </div>
     <div class="hero-avatar-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo" class="ronaldo-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" referrerpolicy="no-referrer" alt="Cristiano Ronaldo" class="ronaldo-img">
     </div>
   </section>
 
@@ -551,7 +557,7 @@
 
     <!-- Ronaldo Quote Banner 1 -->
     <div class="ronaldo-banner">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Ronaldo Quote">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" referrerpolicy="no-referrer" alt="Ronaldo Quote">
       <div>
         <blockquote>"Your love makes me strong, your hate makes me unstoppable. Trong nghề IT cũng vậy: Đừng sợ code lỗi, chính những dòng code lỗi mới khiến bạn thành công (như Ronaldo)"</blockquote>
         <cite>- Tinh thần CR7 & Bài học làm Portfolio</cite>
@@ -650,7 +656,7 @@
 
     <!-- Ronaldo Quote Banner 2 -->
     <div class="ronaldo-banner">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Ronaldo Hard Work">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" referrerpolicy="no-referrer" alt="Ronaldo Hard Work">
       <div>
         <blockquote>"Talent without working hard is nothing. Có tố chất lập trình nhưng không chủ động hoàn thiện Portfolio và rèn luyện mỗi ngày thì cơ hội cũng sẽ thuộc về người khác"</blockquote>
         <cite>- CR7 Motivation</cite>
@@ -672,7 +678,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Nhóm 9h53 - Môn SS004 (Kỹ năng Nghề nghiệp). SIUUU! (1 WC = 1 Euro)</p>
+    <p>&copy; 2026 Nhóm 9h53 - Môn SS004 (Kỹ năng Nghề nghiệp). SIUUU!</p>
   </footer>
 
   <!-- Particle Animation Script -->
